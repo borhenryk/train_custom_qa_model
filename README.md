@@ -1,14 +1,14 @@
-# Run translation for a chosen language
+# Translate SQuAD and train a language specific QA Model
 
 This repository includes the script for translation the SQuADv2 to a chosen language:
 * The structure of SQuAD is kept as it was
 * Translated answers are matched through a similarity matcher on ngram basis
 * Text is translated with the ´mtransalte´ package
 
-### Example
+## Example
 
-Run `python prepare_squad_nl.py --dest_lng pl --train_or_dev dev` for translating the dev set to polish
-Run `python prepare_squad_nl.py --dest_lng pl --train_or_dev train` for translating the train set to polish
+* Run `python prepare_squad_nl.py --dest_lng pl --train_or_dev dev` for translating the dev set to polish
+* Run `python prepare_squad_nl.py --dest_lng pl --train_or_dev train` for translating the train set to polish
 
 
 As a result a new dir with the name of the translated SQuAD will be created
@@ -16,7 +16,6 @@ As a result a new dir with the name of the translated SQuAD will be created
 ## Train QA Model with transformers
 
 The output files can than be used for training a QA model:
-
 * Use the existing multilingual bert as lm or any other language specific model
 * Run the following script from huggigface tranformers
 
@@ -58,7 +57,7 @@ qa_pipeline({
 
 ```
 
-# Output:
+**Output:**
 
 ```json
 {

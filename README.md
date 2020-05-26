@@ -7,8 +7,8 @@ This repository includes the script for translation the SQuADv2 to a chosen lang
 
 ## Example
 
-* Run `python prepare_squad_nl.py --dest_lng pl --train_or_dev dev` for translating the dev set to polish
-* Run `python prepare_squad_nl.py --dest_lng pl --train_or_dev train` for translating the train set to polish
+* Run `python prepare_squad.py --dest_lng pl --train_or_dev dev` for translating the dev set to polish
+* Run `python prepare_squad.py --dest_lng pl --train_or_dev train` for translating the train set to polish
 
 
 As a result a new dir with the name of the translated SQuAD will be created

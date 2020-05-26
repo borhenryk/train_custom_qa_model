@@ -20,7 +20,7 @@ The output files can than be used for training a QA model:
 * Run the following script from huggigface tranformers
 
 ```python
-export SQUAD_DIR=path/to/nl_squad
+export SQUAD_DIR=path/to/translated_squad
 
 python run_squad.py
   --model_type bert \
@@ -28,8 +28,8 @@ python run_squad.py
   --do_train \
   --do_eval \
   --version_2_with_negative \
-  --train_file $SQUAD_DIR/nl_squad_train.json \
-  --predict_file $SQUAD_DIR/nl_squad_dev.json \
+  --train_file $SQUAD_DIR/translated_squad_train.json \
+  --predict_file $SQUAD_DIR/translated_squad_dev.json \
   --num_train_epochs 2 \
   --max_seq_length 384 \
   --doc_stride 128 \
@@ -67,3 +67,12 @@ qa_pipeline({
   "answer": "Warszawa"
 }
 ```
+
+## Model benchmark (date: 26.05.2020)
+
+| Model                | EM/F1 |HasAns (EM/F1) | NoAns |
+| ---------------------- | ----- | ----- | ----- |
+| [SlavicBERT](https://huggingface.co/DeepPavlov/bert-base-bg-cs-pl-ru-cased)   | 52.90/59.61  | **37.04**/**50.48** | 68.71 |
+| [polBERT](https://huggingface.co/dkleczek/bert-base-polish-uncased-v1)   | 50.63/57.24| 35.98/49.21  | 65.24 |
+| [multiBERT](https://huggingface.co/bert-base-multilingual-cased) | **55.67**/**61.94**  | 35.76/48.31 | **75.52** |
+
